@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,12 +15,114 @@
   <body>
     <header>
       <nav class="navbar bg-dark text-light text-center">
-        <div class="container-fluid d-flex justify-content-center">
+        <div class="container d-flex justify-content-center">
           <a class="navbar-brand text-bg-dark" href="#">Practico 5</a>
         </div>
       </nav>
     </header>
-    <main></main>
+    <main class="container-fluid p-5 text-center text-bg-secondary">
+      <h1 class="h1">Ejercicio 2 Tp5</h1>
+      <h2 class="h2 my-4">Creacion de objeto persona</h2>
+      <section class="container-fluid d-flex justify-content-center">
+        
+        <form class="w-50 text-bg-light">
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >Nombres y Apellido:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nombreyApellido"
+              aria-describedby="emailHelp"
+              placeholder="ej: Juan Perez"
+              required
+              minlength="5"
+              maxlength="50"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >Edad:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="edad"
+              required
+              minlength="1"
+              maxlength="150"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >DNI:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="dni"
+              required
+              minlength="7"
+              maxlength="8"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Sexo:</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">Femenino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+              <label class="form-check-label" for="inlineRadio3">No binario</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >Peso:</label>
+            <input
+              type="number"
+              class="form-control"    
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >Altura:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="nombreyApellido" class="form-label"
+              >Año de nacimiento:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3">
+          <button type="submit" class="btn btn-warning w-100">Enviar</button>
+        </form>
+      </section>
+      <section class="container-fluid d-flex justify-content-evenly my-4">
+        <button type="button" class="btn btn-info">Mostrar generacion</button>
+        <button type="button" class="btn btn-info">Mayor de edad</button>
+      </section>
+    </main>
     <footer class="bg-dark text-light py-4 text-center">
       <p>&copy; Todos los derechos reservados</p>
     </footer>
