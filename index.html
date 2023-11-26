@@ -20,12 +20,12 @@
         </div>
       </nav>
     </header>
-    <main class="container-fluid p-5 text-center text-bg-secondary">
+    <main class="container-fluid py-5 text-center text-bg-secondary">
       <h1 class="h1">Ejercicio 2 Tp5</h1>
       <h2 class="h2 my-4">Creacion de objeto Persona</h2>
       <section class="container-fluid d-flex justify-content-center">
         
-        <form class="w-50 text-bg-light">
+        <form class="text-bg-light ">
           <div class="mb-3">
             <label class="form-label"
               >Nombre:</label
@@ -114,9 +114,11 @@
         </form>
       </section>
       <section class="container-fluid d-flex justify-content-evenly my-4">
-        <button type="button" class="btn btn-primary" onclick="mostrarGeneracion()">Mostrar Generación</button>
-        <button type="button" class="btn btn-primary" onclick="esMayorDeEdad()">Es Mayor de Edad</button>
-        <button type="button" class="btn btn-primary" onclick="mostrarDatos()">Mostrar Datos</button>
+        <div class="row">
+        <button type="button" class="btn btn-primary col-lg-12 my-2" onclick="mostrarGeneracion()">Mostrar Generación</button>
+        <button type="button" class="btn btn-primary col-lg-12 my-2" onclick="esMayorDeEdad()">Es Mayor de Edad</button>
+        <button type="button" class="btn btn-primary col-lg-12 my-2" onclick="mostrarDatos()">Mostrar Datos</button>
+      </div>
       </section>
     </main>
     <footer class="bg-dark text-light py-4 text-center">
