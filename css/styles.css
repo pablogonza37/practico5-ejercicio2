@@ -6,7 +6,7 @@ body{
 
 main{
     flex-grow: 1;
-    
+    background-image: url("https://img.freepik.com/foto-gratis/concepto-material-madera-textura-papel-pintado-fondo_53876-42925.jpg");
 }
 
 label, .form-check{
