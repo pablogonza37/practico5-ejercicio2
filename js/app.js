@@ -11,27 +11,17 @@ class Persona {
 
   mostrarGeneracion() {
     if (this.anioNacimiento >= 1930 && this.anioNacimiento <= 1948) {
-      alert(
-        `La persona de Nombre ${this.nombre} pertenece a la Silent Generation y su rasgo caracteristico es la "Austeridad".`
-      );
+      return `La persona de nombre "${this.nombre}" pertenece a la Silent Generation y su rasgo caracteristico es la "Austeridad".`;
     } else if (this.anioNacimiento >= 1949 && this.anioNacimiento <= 1968) {
-      alert(
-        `La persona de Nombre ${this.nombre} pertenece a la generacion Baby Boom y su rasgo caracteristico es la "Ambicion".`
-      );
+      return `La persona de nombre "${this.nombre}" pertenece a la generacion Baby Boom y su rasgo caracteristico es la "Ambicion".`;
     } else if (this.anioNacimiento >= 1969 && this.anioNacimiento <= 1980) {
-      alert(
-        `La persona de Nombre ${this.nombre} pertenece a la generacion X y su rasgo caracteristico es la "Obsesion por el exito".`
-      );
+      return `La persona de nombre "${this.nombre}" pertenece a la generacion X y su rasgo caracteristico es la "Obsesion por el exito".`;
     } else if (this.anioNacimiento >= 1981 && this.anioNacimiento <= 1993) {
-      alert(
-        `La persona de Nombre ${this.nombre} pertenece a la generacion Y(Millennials) y su rasgo caracteristico es la "Frustracion".`
-      );
+      return `La persona de nombre "${this.nombre}" pertenece a la generacion Y(Millennials) y su rasgo caracteristico es la "Frustracion".`;
     } else if (this.anioNacimiento >= 1994 && this.anioNacimiento <= 2010) {
-      alert(
-        `La persona de Nombre ${this.nombre} pertenece a la generacion Z y su rasgo caracteristico es la "Irreverencia".`
-      );
+      return`La persona de nombre "${this.nombre}" pertenece a la generacion Z y su rasgo caracteristico es la "Irreverencia".`;
     } else {
-      alert(`No tiene definida una generacion`);
+      return `No tiene definida una generacion`;
     }
   }
 
@@ -150,6 +140,8 @@ function validacion() {
   }
   if (sexo === "selecione una opcion") {
     alert("Selecione una opcion en el campo sexo");
+    return false;
   }
+
   return true;
 }
