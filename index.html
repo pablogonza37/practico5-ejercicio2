@@ -34,6 +34,9 @@
               class="form-control"
               id="nombre"
               placeholder="ej: Juan Perez"
+              minlength="3"
+              maxlength="50"
+              required
               
             />
           </div>
@@ -46,6 +49,9 @@
               type="number"
               class="form-control"
               id="edad"
+              min="1"
+              max="150"
+              required
               
             />
           </div>
@@ -58,13 +64,15 @@
               type="number"
               class="form-control"
               id="dni"
-              
+              minlength="7"
+              maxlength="9"
+              required
             />
           </div>
 
           <div class="mb-3">
             <label for="opciones">Sexo:</label>
-            <select id="opciones" class="form-select" aria-label="Default select example">
+            <select id="opciones" class="form-select" aria-label="Default select example" required>
               <option selected>Selecione una opcion</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
@@ -78,7 +86,10 @@
             <input
               type="number"
               class="form-control"
-              id="peso"    
+              id="peso" 
+              min="30"
+              max="300" 
+              required  
             />
           </div>
 
@@ -89,6 +100,9 @@
             <input
               type="number"
               class="form-control" id="altura"
+              min="100"
+              max="250"
+              required
             />
           </div>
           <div class="mb-3">
@@ -96,9 +110,10 @@
               >Año de nacimiento:</label
             >
             <input
-              type="number"
+              type="date"
               class="form-control"
               id="anioNacimiento"
+              required
             />
           </div>
 
