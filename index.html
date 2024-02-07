@@ -23,12 +23,9 @@
     <main class="container-fluid py-5 text-center">
       <h1 class="h1 text-white my-3">Creacion de objeto Persona</h1>
       <section class="container-fluid d-flex justify-content-center">
-        
-        <form class="text-bg-light ">
+        <form class="text-bg-light" id="form" onsubmit="crearPersona(event)">
           <div class="mb-3">
-            <label class="form-label"
-              >Nombre:</label
-            >
+            <label for="nombre" class="form-label">Nombre:</label>
             <input
               type="text"
               class="form-control"
@@ -37,42 +34,47 @@
               minlength="3"
               maxlength="50"
               required
-              
             />
           </div>
 
           <div class="mb-3">
-            <label class="form-label"
-              >Edad:</label
-            >
+            <label for="edad" class="form-label">Edad:</label>
             <input
               type="number"
               class="form-control"
+              placeholder="Edad"
               id="edad"
               min="1"
               max="150"
               required
-              
             />
           </div>
 
           <div class="mb-3">
-            <label class="form-label"
-              >DNI:</label
-            >
+            <label for="dni" class="form-label">DNI:</label>
             <input
               type="number"
               class="form-control"
+              placeholder="DNI"
               id="dni"
-              minlength="7"
-              maxlength="9"
+              name="dni"
+              min="0"
+              max="99999999"
+              step="1"
+              pattern="[0-9]{7,8}"
+              title="El DNI debe contener entre 7 y 8 dígitos numéricos"
               required
             />
           </div>
 
           <div class="mb-3">
-            <label for="opciones">Sexo:</label>
-            <select id="opciones" class="form-select" aria-label="Default select example" required>
+            <label for="opciones" for="opciones">Sexo:</label>
+            <select
+              id="opciones"
+              class="form-select"
+              aria-label="Default select example"
+              required
+            >
               <option selected>Selecione una opcion</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
@@ -81,36 +83,37 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label"
-              >Peso(Kg):</label>
+            <label for="peso" class="form-label">Peso(Kg):</label>
             <input
-              type="number"
+              type="text"
               class="form-control"
-              id="peso" 
-              min="30"
-              max="300" 
-              required  
+              placeholder="Peso en kg"
+              id="peso"
+              name="peso"
+              pattern="\d+(\.\d+)?"
+              title="El peso debe ser un número válido"
+              required
             />
           </div>
 
           <div class="mb-3">
-            <label class="form-label"
-              >Altura(Cm):</label
-            >
+            <label for="altura" class="form-label">Altura(Cm):</label>
             <input
-              type="number"
-              class="form-control" id="altura"
-              min="100"
-              max="250"
+              type="text"
+              class="form-control"
+              placeholder="Altura en cm"
+              id="altura"
+              name="altura"
+              pattern="\d+(\.\d+)?"
+              title="La altura debe ser un número válido"
               required
             />
           </div>
           <div class="mb-3">
-            <label class="form-label"
-              >Año de nacimiento:</label
-            >
+            <label for="anioNacimiento" class="form-label">Año de nacimiento:</label>
             <input
-              type="date"
+              type="number"
+              placeholder="Ej: 1900"
               class="form-control"
               id="anioNacimiento"
               required
@@ -118,15 +121,40 @@
           </div>
 
           <div class="mb-3">
-            <button type="button" class="btn btn-warning" onclick="crearPersona()">Crear Persona</button>
+            <button type="submit" class="btn btn-warning">Crear Persona</button>
+          </div>
         </form>
       </section>
       <section class="container-fluid my-4">
         <div class="grupoBtn w-100">
-        <button type="button" class="btn btn-dark col-lg-12 my-2" onclick="mostrarGeneracion()">Mostrar Generación</button>
-        <button type="button" class="btn btn-dark col-lg-12 my-2" onclick="esMayorDeEdad()">Mayor de Edad</button>
-        <button type="button" class="btn btn-dark col-lg-12 my-2" onclick="mostrarDatos()">Mostrar Datos</button>
-      </div>
+          <button
+            type="button"
+            id="generacion"
+            class="btn btn-dark col-lg-12 my-2"
+            onclick="mostrarGeneracion()"
+            disabled
+          >
+            Mostrar Generación
+          </button>
+          <button
+            type="button"
+            id="mayorEdad"
+            class="btn btn-dark col-lg-12 my-2"
+            onclick="esMayorDeEdad()"
+            disabled
+          >
+            Mayor de Edad
+          </button>
+          <button
+            type="button"
+            id="datos"
+            class="btn btn-dark col-lg-12 my-2"
+            onclick="mostrarDatos()"
+            disabled
+          >
+            Mostrar Datos
+          </button>
+        </div>
       </section>
     </main>
     <footer class="bg-dark text-light py-4 text-center">

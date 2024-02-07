@@ -19,7 +19,7 @@ class Persona {
     } else if (this.anioNacimiento >= 1981 && this.anioNacimiento <= 1993) {
       return `La persona de nombre "${this.nombre}" pertenece a la generacion Y(Millennials) y su rasgo caracteristico es la "Frustracion".`;
     } else if (this.anioNacimiento >= 1994 && this.anioNacimiento <= 2010) {
-      return`La persona de nombre "${this.nombre}" pertenece a la generacion Z y su rasgo caracteristico es la "Irreverencia".`;
+      return `La persona de nombre "${this.nombre}" pertenece a la generacion Z y su rasgo caracteristico es la "Irreverencia".`;
     } else {
       return `No tiene definida una generacion`;
     }
@@ -34,7 +34,12 @@ class Persona {
   }
 }
 
-function crearPersona() {
+const btnMostrarGeneracion = document.querySelector("#generacion");
+const btnMayorEdad = document.querySelector("#mayorEdad");
+const btnMostrarDatos = document.querySelector("#datos");
+
+function crearPersona(event) {
+  event.preventDefault();
   const nombre = document.getElementById("nombre").value;
   const edad = parseInt(document.getElementById("edad").value);
   const dni = document.getElementById("dni").value;
@@ -54,13 +59,21 @@ function crearPersona() {
     altura,
     anioNacimiento
   );
-  validacion();
-  return persona;
+
+  personaCreada = persona;
+  if (validacion()) {
+    alert("Persona creada con exito");
+    btnMostrarGeneracion.disabled = false;
+    btnMayorEdad.disabled = false;
+    btnMostrarDatos.disabled = false;
+    document.querySelector('#form').reset();
+  }
+
 }
 
 function mostrarGeneracion() {
   if (validacion()) {
-    alert(crearPersona().mostrarGeneracion());
+    alert(personaCreada.mostrarGeneracion());
   } else {
     alert("Primero crea una persona.");
   }
@@ -68,7 +81,7 @@ function mostrarGeneracion() {
 
 function esMayorDeEdad() {
   if (validacion()) {
-    const mensaje = crearPersona().esMayorDeEdad()
+    const mensaje = personaCreada.esMayorDeEdad()
       ? "Es mayor de edad."
       : "No es mayor de edad.";
     alert(mensaje);
@@ -79,66 +92,59 @@ function esMayorDeEdad() {
 
 function mostrarDatos() {
   if (validacion()) {
-    alert(crearPersona().mostrarDatos());
+    alert(personaCreada.mostrarDatos());
   } else {
     alert("Primero crea una persona.");
   }
 }
 
 function validacion() {
-  const nombre = document.getElementById("nombre").value;
-  const edad = parseInt(document.getElementById("edad").value);
-  const dni = document.getElementById("dni").value;
-  const sexo = document.getElementById("opciones").value;
-  const peso = parseFloat(document.getElementById("peso").value);
-  const altura = parseInt(document.getElementById("altura").value);
-  const anioNacimiento = parseInt(
-    document.getElementById("anioNacimiento").value
-  );
-
   if (
-    nombre === "" ||
-    edad === NaN ||
-    dni === NaN ||
-    sexo === "Selecione una opcion" ||
-    peso === NaN ||
-    altura === NaN ||
-    anioNacimiento === NaN
+    personaCreada.nombre === "" ||
+    personaCreada.edad === NaN ||
+    personaCreada.dni === NaN ||
+    personaCreada.sexo === "Selecione una opcion" ||
+    personaCreada.peso === NaN ||
+    personaCreada.altura === NaN ||
+    personaCreada.anioNacimiento === NaN
   ) {
     alert("Por favor, complete todos los campos.");
     return false;
   }
   const letras = /^[A-Za-z]+$/;
-  if (!nombre.match(letras)) {
+  if (!personaCreada.nombre.match(letras)) {
     alert("El nombre solo debe contener letras.");
     return false;
   }
-  if (edad < 0 || edad > 120) {
+  if (personaCreada.edad < 0 || edad > 120) {
     alert("Ingrese un rango de edad valido");
     return false;
   }
 
-  if (dni.length !== 7 && dni.length !== 8) {
+  if (personaCreada.dni.length !== 7 && personaCreada.dni.length !== 8) {
     alert("El número de DNI debe tener 7 u 8 dígitos.");
     return false;
   }
-  if (peso < 30 || peso > 300) {
+  if (personaCreada.peso < 30 || peso > 300) {
     alert("El peso debe estar entre 3 y 300 kg.");
     return false;
   }
 
-  if (altura < 100 || altura > 250) {
+  if (personaCreada.altura < 100 || altura > 250) {
     alert("La altura debe estar entre 100 y 250 cm.");
     return false;
   }
 
   let anioActual = new Date().getFullYear();
 
-  if (anioNacimiento < 1900 || anioNacimiento > anioActual) {
+  if (
+    personaCreada.anioNacimiento < 1900 ||
+    personaCreada.anioNacimiento > anioActual
+  ) {
     alert("El año de nacimiento debe estar entre 1900 y " + anioActual);
     return false;
   }
-  if (sexo === "selecione una opcion") {
+  if (personaCreada.sexo === "selecione una opcion") {
     alert("Selecione una opcion en el campo sexo");
     return false;
   }
