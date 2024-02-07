@@ -1,58 +1,59 @@
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+background: black;
+   
+  
 }
 
-main{
-    flex-grow: 1;
-    background-image: url("https://img.freepik.com/foto-gratis/concepto-material-madera-textura-papel-pintado-fondo_53876-42925.jpg");
+main {
+  flex-grow: 1;
 }
 
-label, .form-check{
-    display: flex;
-    justify-content: flex-start;
+label,
+.form-check {
+  display: flex;
+  justify-content: flex-start;
 }
 
-form{
-    border: 1px solid red;
-    border-radius: 10px;
-    padding: 20px;
-    width: 50%; 
-}
-.grupoBtn button{
-    width: 200px;
-    margin: 0 20px;
+form {
     border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%;
+}
+.grupoBtn button {
+  width: 200px;
+  margin: 0 20px;
+  border: 1px solid white;
 }
 
-@media all and (max-width: 767px){
-    
-form{
+@media all and (max-width: 767px) {
+  form {
     width: 100%;
-}
-main{
+  }
+  main {
     padding-left: 10px;
     padding-right: 10px;
-}
+  }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px){
-    form{
-        width: 80%;
-    }
-    main{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+@media all and (min-width: 768px) and (max-width: 991px) {
+  form {
+    width: 80%;
+  }
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-@media all and (min-width: 992px){
-    
-    form{
-        width: 60%;
-    }
-    main{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+@media all and (min-width: 992px) {
+  form {
+    width: 60%;
+  }
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
