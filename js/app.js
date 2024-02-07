@@ -66,9 +66,8 @@ function crearPersona(event) {
     btnMostrarGeneracion.disabled = false;
     btnMayorEdad.disabled = false;
     btnMostrarDatos.disabled = false;
-    document.querySelector('#form').reset();
+    document.querySelector("#form").reset();
   }
-
 }
 
 function mostrarGeneracion() {
